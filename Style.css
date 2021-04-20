@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.list{
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.font{
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  background: #5b5643;
+  border-radius: 10px 10px 0px 0px;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  color: #d5921a;
+}
+.setbar{
+  display: flex;
+  flex-direction: column;
+  width: 820px;
+}
+.buttons{
+  display: flex;
+  width: 820px;
+  justify-content: space-between;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px;
+
+}
+body{
+  background:#f1d881;
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input[type=text]:focus {
+  background-color: lightblue;
+  border-color: white;
+}
+
+button{
+  font-size:30px;
+  font-family: "Times New Roman", Times, serif;
+
+  width: 250px;
+  height: 50px;
+  background-color: #d5921a;
+  border: none;
+}
+button,
+button:active,
+button:focus {
+  outline: none;
+
+}
+button:active{
+  background-color: #e0a741;
+}
+p{
+  padding: 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-size:20px;
+
+}
+input[type=checkbox]{
+  padding-left: 10px;
+}
+#edit {
+  border-radius: 0px 0px 0px 10px;
+}
+#add {
+
+}
+#del {
+  border-radius: 0px 0px 10px 0px;
+}
+#note{
+  border-radius: 10px 10px 0px 0px;
+  width: 820px;
+  height: 100%;
+  min-height: 500px;
+  background: #f9f4e6;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
