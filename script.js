@@ -52,8 +52,10 @@ function addElem() {
     alert("Input is Empty")
   } else{
   let randClass = makeClass();
-  list.insertAdjacentHTML('beforeend', `<p class = '${randClass}'><input class ="${randClass}" type="checkbox"
-                          name="name" value="${document.getElementById('inputText').value}">  ${document.getElementById('inputText').value}</p>`);
+  list.insertAdjacentHTML('beforeend', `<p class = '${randClass}'>
+                          <input class ="${randClass}" type="checkbox" name="name"
+                          value="${escapeHtml(document.getElementById('inputText').value)}"> 
+                          ${escapeHtml(document.getElementById('inputText').value)}</p>`);
   document.getElementById('inputText').value = "";
   }
 }
@@ -86,4 +88,13 @@ function makeClass() {
   for (let i = 0; i < 5; i++)
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   return text;
+}
+
+function escapeHtml(text) {
+  return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
 }
