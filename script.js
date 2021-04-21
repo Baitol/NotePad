@@ -1,7 +1,8 @@
 const list = document.getElementById('list');
 const add = document.getElementById('add');
 const del = document.getElementById('del');
-const edit = document.getElementById('edit');
+const choose = document.getElementById('choose');
+const delall = document.getElementById('delall')
 let checkedBoxes = new Set();
 
 add.addEventListener('click', addElem)
@@ -27,10 +28,17 @@ document.addEventListener('keydown', event => {
   }
 })
 
-edit.addEventListener('click', function() {
+delall.addEventListener('click', function () {
+    checkedBoxes.clear();
+    ChooseAllList();
+    removeElem();
+})
+
+choose.addEventListener('click', function() {
   checkedBoxes.clear();
   filtreBoxes();
   chooseText();
+
 })
 
 function chooseText() {
@@ -54,7 +62,7 @@ function addElem() {
   let randClass = makeClass();
   list.insertAdjacentHTML('beforeend', `<p class = '${randClass}'>
                           <input class ="${randClass}" type="checkbox" name="name"
-                          value="${escapeHtml(document.getElementById('inputText').value)}"> 
+                          value="${escapeHtml(document.getElementById('inputText').value)}">
                           ${escapeHtml(document.getElementById('inputText').value)}</p>`);
   document.getElementById('inputText').value = "";
   }
@@ -70,6 +78,16 @@ function filtreBoxes() {
   }
   //for (let value of checkedBoxes) alert(value);
 }
+
+function ChooseAllList() {
+  let elements = list.querySelectorAll('input[type=checkbox]');
+  for (let i = 0; i < elements.length; i++) {
+    let element = elements[i];
+    checkedBoxes.add(element.className);
+  }
+  //for (let value of checkedBoxes) alert(value);
+}
+
 
 function removeElem() {
   for (let value of checkedBoxes) {

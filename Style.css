@@ -21,10 +21,14 @@
   flex-direction: column;
   width: 820px;
 }
-.buttons{
+.buttons,
+.buttons-1{
   display: flex;
   width: 820px;
   justify-content: space-between;
+}
+.buttons-1{
+  margin-top: 10px;
 }
 input[type=text] {
   width: 100%;
@@ -79,10 +83,10 @@ input[type=checkbox]{
 #edit {
   border-radius: 0px 0px 0px 10px;
 }
-#add {
+#addv {
 
 }
-#del {
+#delall {
   border-radius: 0px 0px 10px 0px;
 }
 #note{
